@@ -1,3 +1,12 @@
+const options = {
+  method: "GET",
+  headers: {
+    Accept: "application/json",
+    Authorization:
+      "Bearer ROqwerCTavoSaqEE6G4YDxlovyop5PqLfrPUFfYaEjIr9cBF45fxxr1rVLSnnFZ8",
+  },
+};
+
 const stylesApi =
   "https://iconfinder-api-auth.herokuapp.com/v4/styles?count=30";
 const categoriesApi =
@@ -6,7 +15,7 @@ const categoriesApi =
 // Defining async function
 async function getapi(url, type) {
   // Storing response
-  const response = await fetch(url);
+  const response = await fetch(url, options);
 
   // Storing data in form of JSON
   var data = await response.json();
