@@ -11,6 +11,8 @@ const stylesApi =
   "https://iconfinder-api-auth.herokuapp.com/v4/styles?count=30";
 const categoriesApi =
   "https://iconfinder-api-auth.herokuapp.com/v4/categories?count=30";
+const iconApi =
+  "https://iconfinder-api-auth.herokuapp.com/v4/icons/search?query=Car&count=30";
 
 // Defining async function
 async function getapi(url, type) {
@@ -23,11 +25,13 @@ async function getapi(url, type) {
   //   if (response) {
   //     hideloader();
   //   }
-  show(data, type);
+  // show(data, type);
+  console.log(data.icons[0].raster_sizes[5].formats[0].preview_url);
 }
+getapi(iconApi, 0);
 // Calling that async function
-getapi(stylesApi, 0);
-getapi(categoriesApi, 1);
+// getapi(stylesApi, 0);
+// getapi(categoriesApi, 1);
 // Function to define innerHTML for HTML table
 function show(data, type) {
   const obj = data;
@@ -53,25 +57,4 @@ function show(data, type) {
     // Setting innerHTML as tab variable
     document.getElementById("category").innerHTML = tab;
   }
-  // function show(data, type) {
-  //   const obj = data;
-  //   console.log(type);
-  //   let tab = `<tr>
-  //           <th>Name</th>
-  //           <th>Identifier</th>
-  //             </tr>`;
-
-  //   // Loop to access all rows
 }
-
-// fetch("https://iconfinder-api-auth.herokuapp.com/v4/styles?count=30")
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
-// fetch("https://iconfinder-api-auth.herokuapp.com/v4/categories?count=30")
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
-// const obj = JSON.parse(data);
-// document.getElementById("demo").innerHTML =
-//   obj.Array[0].name + " " + obj.Array[1].name
