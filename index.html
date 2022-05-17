@@ -2,60 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IconFinder API HOB</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
 
 <body>
     <div class="app-body">
         <div class="drop-menu-body">
-            <div id="partA" style="padding: 2.5rem; ">
-                <label for="cars">Choose a Style:</label>
-                <select name="styles" id="demo">
-                </select>
+            <div class="styles-box">
+                <label for="style">Choose a Style:</label>
+                <select name="styles" id="demo"></select>
             </div>
-            <br>
-            <div id="partB" style="padding: 2.5rem; ">
+
+            <div id="category-box">
                 <label for="category">Choose a category:</label>
-                <select name="category" id="category">
-                </select>
+                <select name="category" id="category"></select>
             </div>
         </div>
         <div class="search-body">
             <form id="search" class="clearfix">
                 <div class="pull-left">
-                    <input type="text" id="query" name="query" placeholder="Search for icons..." autofocus>
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <input type="text" id="query" name="query" placeholder="Search for icons..." autofocus />
+                    <button type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
                 </div>
 
-                <input type="hidden" name="count" value="30">
+                <input type="hidden" name="count" value="30" />
             </form>
         </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="Task 1" style="padding: 5rem ; ">
-
     </div>
 </body>
 
