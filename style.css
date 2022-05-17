@@ -1,15 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 *{
     box-sizing: border-box;
 }
-
+body{ 
+    font-family: "Poppins", sans-serif;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
 .app-body{
     display: flex;
     align-items: center;
     justify-content:space-between;
     flex-direction: column;
     margin: 0;
-        min-height: 50vh;
-        padding: 4rem;
+    min-height: 50vh;
+    padding: 4rem;
 }
 
 .drop-menu-body{
@@ -28,4 +33,59 @@
     justify-content: center;
     min-height: 20vh;
     min-width: 50vw;
+    font-size: 30px;
+}
+
+
+#search {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+#search label {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #666;
+}
+
+#search input[type="text"] {
+    border-radius: 50px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    width: 200px;
+}
+
+#search input[type="text"]:focus {
+    outline: none;
+    border-color: #8ec2f6;
+    box-shadow: 0 0 0 1px #69aff4;
+}
+
+#search button {
+    border: 0;
+    background: 0;
+    color: #999;
+    padding: 9px;
+    position: relative;
+    left: -45px;
+}
+
+#search button:hover {
+    color: #666;
+}
+
+.results {
+    width: 530px;
+    padding: 10px;
+    position: absolute;
+    left: 15px;
+    top: 60px;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    z-index: 1000;
 }

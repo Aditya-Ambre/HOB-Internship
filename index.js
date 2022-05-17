@@ -25,13 +25,13 @@ async function getapi(url, type) {
   //   if (response) {
   //     hideloader();
   //   }
-  // show(data, type);
-  console.log(data.icons[0].raster_sizes[5].formats[0].preview_url);
+  show(data, type);
+  // console.log(data.icons[0].raster_sizes[5].formats[0].preview_url);
 }
-getapi(iconApi, 0);
+// getapi(iconApi, 0);
 // Calling that async function
-// getapi(stylesApi, 0);
-// getapi(categoriesApi, 1);
+getapi(stylesApi, 0);
+getapi(categoriesApi, 1);
 // Function to define innerHTML for HTML table
 function show(data, type) {
   const obj = data;
@@ -46,7 +46,7 @@ function show(data, type) {
       console.log(obj.styles[i].name);
     }
     // Setting innerHTML as tab variable
-    document.getElementById("demo").innerHTML = tab;
+    document.getElementById("styles").innerHTML = tab;
   } else {
     for (let i = 0; i < 30; i++) {
       tab += `
