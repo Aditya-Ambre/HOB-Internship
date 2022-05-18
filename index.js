@@ -21,21 +21,14 @@ async function getapi(url, type) {
 
   // Storing data in form of JSON
   var data = await response.json();
-  console.log(data);
-  //   if (response) {
-  //     hideloader();
-  //   }
+
   show(data, type);
-  // console.log(data.icons[0].raster_sizes[5].formats[0].preview_url);
 }
-// getapi(iconApi, 0);
-// Calling that async function
-getapi(stylesApi, 0);
-getapi(categoriesApi, 1);
+
 // Function to define innerHTML for HTML table
 function show(data, type) {
   const obj = data;
-  console.log(type);
+
   let tab = `<option value=""></option>`;
   if (type == 0) {
     // Loop to access all rows
@@ -43,7 +36,6 @@ function show(data, type) {
       tab += `
          <option value="${obj.styles[i].identifier}">${obj.styles[i].name}</option>
         `;
-      console.log(obj.styles[i].name);
     }
     // Setting innerHTML as tab variable
     document.getElementById("styles").innerHTML = tab;
@@ -52,9 +44,31 @@ function show(data, type) {
       tab += `
          <option value="${obj.categories[i].identifier}">${obj.categories[i].name}</option>
         `;
-      console.log(obj.categories[i].name);
     }
     // Setting innerHTML as tab variable
     document.getElementById("category").innerHTML = tab;
   }
 }
+
+async function geticon(url) {
+  const response = await fetch(url, options);
+  // Storing data in form of JSON
+  var data = await response.json();
+  console.log(data);
+  // console.log(data.icons[0].raster_sizes[5].formats[0].preview_url);
+  let img = ``;
+  for (let i = 0; i < 30; i++) {
+    var url = data.icons[i].raster_sizes[5].formats[0].preview_url;
+    console.log(url);
+    img =
+      img +
+      `<img src="${url}" alt="" width="64" data-icon-id="${data.icons[i].icon_id}">`;
+  }
+  const result = document.getElementById("result");
+  result.innerHTML = img;
+}
+
+// Calling that async function
+getapi(stylesApi, 0);
+getapi(categoriesApi, 1);
+geticon(iconApi);
